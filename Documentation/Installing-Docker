@@ -40,37 +40,3 @@ Under certain circumstances the VirtualBox driver that is required by Docker doe
 sc.exe query vboxdrv
 sc.exe start vboxdrv
 ```
-
-# Starting a Solr Instance with Docker
-Now you can request Docker to find a particular image, download and start. This is the way to start the default Solr image:
-
-```
-$ docker run --name my_solr -d -p 8983:8983 -t sol
-```
-
-Once the image has been downloaded, simply access it by the IP displayed in Docker terminal and the mapped port, in this case 8983 was mapped on both ends
-
-```
-http://192.168.99.100:8983/
-```
-
-Hello Solr 7!
-
-![Solr 7](/Documentation/images/solr-7.png)
-
-If you want to download a different version from the supported list, simply add the tag to specify which one of the versions of Solr available in Docker Hub you want to use. Docker will download what's missing on the container to run the other version of Solr.  Wait a little bit and it will start. 
-
-```
-$ docker run --name solr_five -d -p 8983:8983 -t solr:5.5.5
-```
-
-![Solr 5.5](/Documentation/images/solr-5-download.png)
-
-Hello Solr 5.5!
-
-![Solr 5.5](/Documentation/images/solr-5.png)
-
-You can stop using:
-```
-docker stop test_solr
-```
